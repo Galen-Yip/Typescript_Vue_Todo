@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> TypeScript Vue Todo</title>
+  <link rel="stylesheet" href="../dist/todo.css">
+</head>
+<body>
+  <div id="todoapp">
+    <div class="title">
+      <h1>Vue.js + TypeScript</h1>
+      <h1>Todos</h1>
+    </div>
+
+    <div class="content">
+      <div id="create-todo">
+        <input id="new-todo" 
+          placeholder="What needs to be done?" 
+          type="text" 
+          v-model="newTaskBody"
+          @keyup.enter="addTask()" />
+      </div>
+
+      <div id="todos">
+        <input class="check mark-all-done" type="checkbox" v-model="allDone"/>
+        <label for="mark-all-done">Mark all as complete</label>
+        <ul id="todo-list">
+          <li v-for="task in tasks" :class="{editing: task == editingTask}">
+            <div class="todo" :class="{done: task.done}">
+              <div class="display">
+                <input class="check" type="checkbox" v-model="task.done" @click.stop="" />
+                <label class="todo-content" @dblclick="editTask(task)">{{task.body}}</label>
+                <span class="todo-destroy" @click="deleteTask(task)"></span>
+              </div>
+              <div class="edit">
+                <input class="todo-input" type="text" autofocus=true
+                  v-model="task.body"
+                  @blur="doneEdit(task)"
+                  @keyup.enter="doneEdit(task)"
+                  @keyup.esc="doneEdit(task)" />
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div id="todo-stats"></div>
+    </div>
+    
+  </div>
+  <script src="../node_modules/vue/dist/vue.min.js"></script>
+  <script src="../dist/todo.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "module": "amd",
+        "target": "es5",
+        "experimentalDecorators": true,
+        "noImplicitAny": false,
+        "sourceMap": false,
+        "outDir": "dist"
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}

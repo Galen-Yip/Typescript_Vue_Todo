@@ -1,0 +1,23 @@
+{
+  "name": "typescript-vue-todo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/todo.js",
+  "scripts": {
+    "start": "webpack"
+  },
+  "keywords": [
+    "typescript",
+    "vuejs",
+    "todo"
+  ],
+  "author": "Galen-Yip",
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^1.0.24"
+  },
+  "devDependencies": {
+    "ts-loader": "^0.8.2",
+    "webpack": "^1.13.1"
+  }
+}
